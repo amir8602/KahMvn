@@ -6,11 +6,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-@WebServlet("/home")
+@WebServlet("/index.jsp")
 public class HomeController extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Req is Here!!!!");
+        req.getRequestDispatcher("/WEB-INF/index.jsp").forward(req,resp);
     }
 }
