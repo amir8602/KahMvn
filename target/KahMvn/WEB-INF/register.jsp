@@ -16,6 +16,7 @@
 
     Name : <input type="text" name="name" /> <br/> <br/> <br/>
     Family : <input type="text" name="family" /> <br/> <br/> <br/>
+    College : <input type="text" name="college"> <br/> <br/> <br/>
     <input type="submit" value="save"/>
 </form>
 

@@ -12,11 +12,11 @@
 </head>
 <body>
 
-<form method="post">
+<form method="post" action="/save-student.do">
 
     Name : <input type="text" name="name" /> <br/> <br/> <br/>
     Family : <input type="text" name="family" /> <br/> <br/> <br/>
-    College : <input type="text" name="college">
+    College : <input type="text" name="college"> <br/> <br/> <br/>
     <input type="submit" value="save"/>
 </form>
 
