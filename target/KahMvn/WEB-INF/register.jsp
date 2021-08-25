@@ -8,9 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Register page</title>
 </head>
 <body>
+
+<form method="post">
+
+    Name : <input type="text" name="name" /> <br/> <br/> <br/>
+    Family : <input type="text" name="family" /> <br/> <br/> <br/>
+    <input type="submit" value="save"/>
+</form>
 
 </body>
 </html>

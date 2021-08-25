@@ -12,7 +12,12 @@
 </head>
 <body>
 
+<form method="post">
 
+    Name : <input type="text" name="name" /> <br/> <br/> <br/>
+    Family : <input type="text" name="family" /> <br/> <br/> <br/>
+    <input type="submit" value="save"/>
+</form>
 
 </body>
 </html>
