@@ -3,8 +3,8 @@
 <head><title>Student site</title></head>
 <body>
 <h1>Welcome to Student Site !!!</h1>
-<a href="/register.jsp">Register</a>
+<a href="/register.do">Register</a>
 <br/>
-<a href="/list.jsp">List Of Registration</a>
+<a href="/list.do">List Of Registration</a>
 </body>
 </html>
