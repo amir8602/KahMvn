@@ -1,4 +1,4 @@
-package com.KahMvn.controller;
+package com.KahMvn.ui.controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
