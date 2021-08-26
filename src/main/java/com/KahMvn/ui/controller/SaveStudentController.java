@@ -19,6 +19,6 @@ public class SaveStudentController extends HttpServlet {
         Student student = new Student(name,family,college);
         StudentService service =new StudentService();
         service.save(student);
-        req.getRequestDispatcher("/home.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/index.jsp").forward(req,resp);
     }
 }
