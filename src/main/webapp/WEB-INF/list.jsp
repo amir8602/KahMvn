@@ -28,7 +28,7 @@
             <td>${st.name}</td>
             <td>${st.family}</td>
             <td>${st.college}</td>
-            <td><a>del</a><a>Edit</a></td>
+            <td><a href="/st-delete.do?id=${i.index+1}">del</a>  <a href="/edit.do">Edit</a></td>
         </tr>
     </c:forEach>
 
