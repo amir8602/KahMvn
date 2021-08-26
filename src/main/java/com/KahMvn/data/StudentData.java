@@ -2,10 +2,9 @@ package com.KahMvn.data;
 
 import com.KahMvn.ui.models.Student;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StudentData {
     public void save (Student student) throws Exception{
@@ -20,6 +19,20 @@ public class StudentData {
             preparedStatement.setString(3,student.getCollege());
             preparedStatement.executeUpdate();
 
+
+    }
+
+    public List<Student> getAll() throws Exception {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/kahmvn","root","1995");
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM stn");
+        List <Student> students = new ArrayList<>();
+        while (resultSet.next()){
+            Student student = new Student(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3));
+            students.add(student);
+        }
+        return students;
 
     }
 }
