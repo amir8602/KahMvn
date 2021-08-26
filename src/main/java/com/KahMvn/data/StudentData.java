@@ -29,7 +29,7 @@ public class StudentData {
         ResultSet resultSet = statement.executeQuery("SELECT * FROM stn");
         List <Student> students = new ArrayList<>();
         while (resultSet.next()){
-            Student student = new Student(resultSet.getString(1),resultSet.getString(2),resultSet.getString(3));
+            Student student = new Student(resultSet.getString(2),resultSet.getString(3),resultSet.getString(4));
             students.add(student);
         }
         return students;

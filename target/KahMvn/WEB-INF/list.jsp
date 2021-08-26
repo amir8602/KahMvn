@@ -24,7 +24,7 @@
 
     <c:forEach items="${allSts}" var="st" varStatus="i">
         <tr>
-            <td>${i.index}</td>
+            <td>${i.index+1}</td>
             <td>${st.name}</td>
             <td>${st.family}</td>
             <td>${st.college}</td>
