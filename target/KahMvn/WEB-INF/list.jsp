@@ -13,26 +13,26 @@
     <title>List</title>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Family</th>
-            <th>College</th>
-            <th>Action</th>
-        </tr>
+<table border=" 1px solid black">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Family</th>
+        <th>College</th>
+        <th>Action</th>
+    </tr>
 
-        <c:forEach items="${allSts}" var="st" varStatus="i">
-            <td>${i}</td>
+    <c:forEach items="${allSts}" var="st" varStatus="i">
+        <tr>
+            <td>${i.index}</td>
             <td>${st.name}</td>
             <td>${st.family}</td>
             <td>${st.college}</td>
             <td><a>del</a><a>Edit</a></td>
-        </c:forEach>
+        </tr>
+    </c:forEach>
 
 
-
-
-    </table>
+</table>
 </body>
 </html>
