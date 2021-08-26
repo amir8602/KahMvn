@@ -18,7 +18,12 @@ public class SaveStudentController extends HttpServlet {
         String college = req.getParameter("college");
         Student student = new Student(name,family,college);
         StudentService service =new StudentService();
-        service.save(student);
-        req.getRequestDispatcher("/WEB-INF/index.jsp").forward(req,resp);
+        try {
+            service.save(student);
+            resp.sendRedirect("/index.jsp");
+        } catch (Exception e) {
+            resp.sendRedirect("error.jsp");
+        }
+
     }
 }
