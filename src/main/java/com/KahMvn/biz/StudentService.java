@@ -16,4 +16,12 @@ public class StudentService {
         return data.getAll();
 
     }
+
+
+    public void delete()throws Exception{
+        StudentData data = new StudentData();
+//        data.delete();
+    }
+
+
 }

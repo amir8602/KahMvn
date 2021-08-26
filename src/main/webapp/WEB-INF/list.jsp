@@ -15,16 +15,18 @@
 <body>
 <table border=" 1px solid black">
     <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Family</th>
-        <th>College</th>
-        <th>Action</th>
+        <th style="color: crimson">Number</th>
+        <th style="color: crimson">ID</th>
+        <th style="color: crimson">Name</th>
+        <th style="color: crimson">Family</th>
+        <th style="color: crimson">College</th>
+        <th style="color: crimson">Action</th>
     </tr>
 
     <c:forEach items="${allSts}" var="st" varStatus="i">
         <tr>
-            <td>${i.index+1}</td>
+            <td style="color: crimson">${i.index+1}</td>
+            <td>${st.id}</td>
             <td>${st.name}</td>
             <td>${st.family}</td>
             <td>${st.college}</td>
