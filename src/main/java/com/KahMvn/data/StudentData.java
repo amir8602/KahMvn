@@ -39,6 +39,10 @@ public class StudentData {
     public void delete(Integer id)throws Exception{
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/kahmvn", "root", "1995");
+        PreparedStatement ps = connection.prepareStatement("DELETE FROM stn where idstn=?");
+        ps.setInt(1,id);
+        ps.executeUpdate();
+
 
 
     }

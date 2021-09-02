@@ -16,7 +16,7 @@
 <table border=" 1px solid black">
     <tr>
         <th style="color: crimson">Number</th>
-        <th style="color: crimson">ID</th>
+<%--        <th style="color: crimson">ID</th>--%>
         <th style="color: crimson">Name</th>
         <th style="color: crimson">Family</th>
         <th style="color: crimson">College</th>
@@ -26,11 +26,11 @@
     <c:forEach items="${allSts}" var="st" varStatus="i">
         <tr>
             <td style="color: crimson">${i.index+1}</td>
-            <td>${st.id}</td>
+<%--            <td>${st.id}</td>--%>
             <td>${st.name}</td>
             <td>${st.family}</td>
             <td>${st.college}</td>
-            <td><a href="/st-delete.do?id=${i.index+1}">del</a>  <a href="/edit.do">Edit</a></td>
+            <td><a href="/st-delete.do?id=${st.id}">del</a>  <a href="/edit.do">Edit</a></td>
         </tr>
     </c:forEach>
 

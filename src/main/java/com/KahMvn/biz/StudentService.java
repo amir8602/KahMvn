@@ -18,9 +18,9 @@ public class StudentService {
     }
 
 
-    public void delete()throws Exception{
+    public void delete(Integer id)throws Exception{
         StudentData data = new StudentData();
-//        data.delete();
+        data.delete(id);
     }
 
 
