@@ -14,9 +14,10 @@
 
 <form method="post" action="/save-student.do">
 
-    Name : <input type="text" name="name" /> <br/> <br/> <br/>
-    Family : <input type="text" name="family" /> <br/> <br/> <br/>
-    College : <input type="text" name="college"> <br/> <br/> <br/>
+    <input type="text" name="id" value="${student.id}" hidden/>
+    Name : <input type="text" name="name" value="${student.name}"/> <br/> <br/> <br/>
+    Family : <input type="text" name="family" value="${student.family}" /> <br/> <br/> <br/>
+    College : <input type="text" name="college" value="${student.college}"/> <br/> <br/> <br/>
     <input type="submit" value="save"/>
 </form>
 

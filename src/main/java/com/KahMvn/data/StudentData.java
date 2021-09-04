@@ -47,4 +47,31 @@ public class StudentData {
 
     }
 
+    public Student findById(Integer id) throws Exception {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/kahmvn", "root", "1995");
+        PreparedStatement ps = connection.prepareStatement("SELECT * FROM stn where idstn=?");
+        ps.setInt(1,id);
+        ResultSet set =  ps.executeQuery();
+        Student student = new Student();
+        if(set.next()){
+            student.setId(set.getString(1));
+            student.setName(set.getString(2));
+            student.setFamily(set.getString(3));
+            student.setCollege(set.getString(4));
+        }
+        return student;
+    }
+
+    public void edit(Student student) throws Exception{
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/kahmvn", "root", "1995");
+        PreparedStatement ps = connection.prepareStatement("UPDATE stn SET  name = ? , family = ? , college = ? WHERE idstn = ?");
+        //ps.setInt(1,Integer.parseInt(student.getId()));
+        ps.setString(1,student.getName());
+        ps.setString(2,student.getFamily());
+        ps.setString(3,student.getCollege());
+        ps.setInt(4,Integer.parseInt(student.getId()));
+        ps.execute();
+    }
 }

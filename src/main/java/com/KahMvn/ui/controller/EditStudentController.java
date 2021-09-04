@@ -2,26 +2,28 @@ package com.KahMvn.ui.controller;
 
 import com.KahMvn.biz.StudentService;
 import com.KahMvn.ui.models.Student;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet("/list.do")
-public class ListController extends HttpServlet {
+@WebServlet("/st-edit.do")
+public class EditStudentController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String sid = req.getParameter("id");
+        Integer id = Integer.parseInt(sid);
         StudentService service = new StudentService();
         try {
-            List<Student> students = service.getAll();
-            req.setAttribute("allSts",students);
-            req.getRequestDispatcher("/WEB-INF/list.jsp").forward(req,resp);
-
+            Student student = service.findById(id);
+            req.setAttribute("student",student);
+            req.getRequestDispatcher("/register.do").forward(req,resp);
         } catch (Exception e) {
-            resp.sendRedirect("/error.jsp");
+            e.printStackTrace();
+
         }
     }
 }

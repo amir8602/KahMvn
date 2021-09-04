@@ -24,4 +24,13 @@ public class StudentService {
     }
 
 
+    public Student findById(Integer id) throws Exception {
+        StudentData data = new StudentData();
+        return data.findById(id);
+    }
+
+    public void edit(Student student) throws Exception {
+        StudentData data = new StudentData();
+        data.edit(student);
+    }
 }

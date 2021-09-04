@@ -13,15 +13,23 @@ import java.io.IOException;
 public class SaveStudentController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String id = req.getParameter("id");
         String name = req.getParameter("name");
         String family = req.getParameter("family");
         String college = req.getParameter("college");
         Student student = new Student(name,family,college);
         StudentService service =new StudentService();
         try {
-            service.save(student);
+            if(id.equalsIgnoreCase("")){
+                service.save(student);
+            }else{
+                student.setId(id);
+                service.edit(student);
+            }
+
             resp.sendRedirect("/index.jsp");
         } catch (Exception e) {
+            e.printStackTrace();
             resp.sendRedirect("error.jsp");
         }
 

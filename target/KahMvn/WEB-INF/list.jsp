@@ -30,7 +30,7 @@
             <td>${st.name}</td>
             <td>${st.family}</td>
             <td>${st.college}</td>
-            <td><a href="/st-delete.do?id=${st.id}">del</a>  <a href="/edit.do">Edit</a></td>
+            <td><a href="/st-delete.do?id=${st.id}">del</a>  <a href="/st-edit.do?id=${st.id}">Edit</a></td>
         </tr>
     </c:forEach>
 
