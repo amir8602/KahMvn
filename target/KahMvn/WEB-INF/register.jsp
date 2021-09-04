@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Amir
@@ -12,8 +13,17 @@
 </head>
 <body>
 
-<form method="post" action="/save-student.do">
+<form method="post" action="<c:url value="/save-student.do"/>">
 
+
+    <c:choose>
+        <c:when test="${mode == 'edit'}">
+            This is Edit page ! <br/> <br/> <br/>
+        </c:when>
+        <c:otherwise>
+            This is registration page! <br/> <br/> <br/>
+        </c:otherwise>
+    </c:choose>
     <input type="text" name="id" value="${student.id}" hidden/>
     Name : <input type="text" name="name" value="${student.name}"/> <br/> <br/> <br/>
     Family : <input type="text" name="family" value="${student.family}" /> <br/> <br/> <br/>

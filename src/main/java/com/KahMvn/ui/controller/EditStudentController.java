@@ -20,6 +20,7 @@ public class EditStudentController extends HttpServlet {
         try {
             Student student = service.findById(id);
             req.setAttribute("student",student);
+            req.setAttribute("mode","edit");
             req.getRequestDispatcher("/register.do").forward(req,resp);
         } catch (Exception e) {
             e.printStackTrace();
