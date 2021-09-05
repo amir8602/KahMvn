@@ -2,6 +2,7 @@ package com.KahMvn.ui.controller;
 
 import com.KahMvn.biz.StudentService;
 import com.KahMvn.ui.models.Student;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,11 +18,11 @@ public class ListController extends HttpServlet {
         StudentService service = new StudentService();
         try {
             List<Student> students = service.getAll();
-            req.setAttribute("allSts",students);
-            req.getRequestDispatcher("/WEB-INF/list.jsp").forward(req,resp);
+            req.setAttribute("allSts", students);
+            req.getRequestDispatcher(req.getContextPath() + "/WEB-INF/list.jsp").forward(req, resp);
 
         } catch (Exception e) {
-            resp.sendRedirect("/error.jsp");
+            resp.sendRedirect(req.getContextPath() + "/error.jsp");
         }
     }
 }

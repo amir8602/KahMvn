@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
 @WebServlet("/save-student.do")
 public class SaveStudentController extends HttpServlet {
     @Override
@@ -17,20 +18,20 @@ public class SaveStudentController extends HttpServlet {
         String name = req.getParameter("name");
         String family = req.getParameter("family");
         String college = req.getParameter("college");
-        Student student = new Student(name,family,college);
-        StudentService service =new StudentService();
+        Student student = new Student(name, family, college);
+        StudentService service = new StudentService();
         try {
-            if(id.equalsIgnoreCase("")){
+            if (id.equalsIgnoreCase("")) {
                 service.save(student);
-            }else{
+            } else {
                 student.setId(id);
                 service.edit(student);
             }
 
-            resp.sendRedirect("/index.jsp");
+            resp.sendRedirect(req.getContextPath() + "/index.jsp");
         } catch (Exception e) {
             e.printStackTrace();
-            resp.sendRedirect("error.jsp");
+            resp.sendRedirect(req.getContextPath() + "error.jsp");
         }
 
     }

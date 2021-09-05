@@ -19,10 +19,10 @@ public class DeleteStudentController extends HttpServlet {
         StudentService service = new StudentService();
         try {
             service.delete(id);
-            resp.sendRedirect("/list.do");
+            resp.sendRedirect(req.getContextPath() + "/list.do");
         } catch (Exception e) {
             e.printStackTrace();
-            resp.sendRedirect("/error.do");
+            resp.sendRedirect(req.getContextPath() + "/error.do");
         }
 
 

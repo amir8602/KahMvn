@@ -11,6 +11,6 @@ import java.io.IOException;
 public class RegisterController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/register.jsp").forward(req,resp);
+        req.getRequestDispatcher(req.getContextPath() + "/WEB-INF/register.jsp").forward(req, resp);
     }
 }
