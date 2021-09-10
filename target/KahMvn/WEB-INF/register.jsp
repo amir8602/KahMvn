@@ -26,6 +26,9 @@
             This is registration page! <br/> <br/> <br/>
         </c:otherwise>
     </c:choose>
+    <c:if test="${not empty validationMsg}">
+        <p style="color: red">Why did you skip the js validation? !!!!???? )))): <br/> ${validationMsg} </p>
+    </c:if>
     <input type="text" name="id" value="${student.id}" hidden/>
     <table>
         <tr>

@@ -20,17 +20,20 @@ public class SaveStudentController extends HttpServlet {
         String college = req.getParameter("college");
 
         if (name.equalsIgnoreCase("")) {
-            req.getRequestDispatcher("/WEB-INF/register.jsp").forward(req, resp);
+//            req.getRequestDispatcher("/WEB-INF/register.jsp").forward(req, resp);
             req.setAttribute("validationMsg", "name is req");
             System.out.println("required");
-        } else if (family.equalsIgnoreCase("")) {
-            req.getRequestDispatcher("/WEB-INF/register.jsp").forward(req, resp);
-            req.setAttribute("validationMsg", "family is req");
+        }  if (family.equalsIgnoreCase("")) {
+//            req.getRequestDispatcher("/WEB-INF/register.jsp").forward(req, resp);
+            req.setAttribute("validationMsg", req.getAttribute("validationMsg")+"<br/> family is req");
             System.out.println("required");
-        } else if (college.equalsIgnoreCase("")) {
-            req.getRequestDispatcher("/WEB-INF/register.jsp").forward(req, resp);
-            req.setAttribute("validationMsg", "college is req");
+        }  if (college.equalsIgnoreCase("")) {
+            //req.getRequestDispatcher("/WEB-INF/register.jsp").forward(req, resp);
+            req.setAttribute("validationMsg", req.getAttribute("validationMsg")+"<br/> college is req");
             System.out.println("required");
+        if(req.getAttribute("validationMsg")!=""){
+            req.getRequestDispatcher("/WEB-INF/register.jsp").forward(req,resp);
+        }
         } else {
 
             Student student = new Student(name, family, college);

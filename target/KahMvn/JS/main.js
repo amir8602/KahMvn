@@ -3,11 +3,11 @@ function f() {
 }
 
 function validateForm() {
-    // var name = document.getElementById("name").value;
-    // var family = document.getElementById("family").value;
-    // var college = document.getElementById("college").value;
-    //
-    //
+    var name = document.getElementById("name").value;
+    var family = document.getElementById("family").value;
+    var college = document.getElementById("college").value;
+
+
     // if(name != ""){
     //     document.getElementById("validateMsgName").style="font-weight: bolder ; color: red ; font-family: Fira Code Medium ; display: none";
     // }
@@ -37,8 +37,8 @@ function validateForm() {
     // } else {
     //     return false;
     // }
-    //
-    //
-    return true;
+
+return true;
+
 
 }
