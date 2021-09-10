@@ -9,26 +9,42 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <script src="JS/main.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="CSS/main.css"/>
     <title>Register page</title>
 </head>
 <body>
 
-<form method="post" action="<c:url value="/save-student.do"/>">
+<form method="post" action="<c:url value="/save-student.do"/>" onsubmit="return validateForm()">
 
 
     <c:choose>
         <c:when test="${mode == 'edit'}">
-            This is Edit page ! <br/> <br/> <br/>
+            This is Edit page ! <br/>
         </c:when>
         <c:otherwise>
             This is registration page! <br/> <br/> <br/>
         </c:otherwise>
     </c:choose>
     <input type="text" name="id" value="${student.id}" hidden/>
-    Name : <input type="text" name="name" value="${student.name}"/> <br/> <br/> <br/>
-    Family : <input type="text" name="family" value="${student.family}" /> <br/> <br/> <br/>
-    College : <input type="text" name="college" value="${student.college}"/> <br/> <br/> <br/>
-    <input type="submit" value="save"/>
+    <table>
+        <tr>
+            <td>Name : </td>
+            <td><input type="text" id="name" name="name" value="${student.name}"/></td>
+            <td class="required" id="validateMsgName">*This is required !!!</td>
+        </tr>
+        <tr>
+            <td>Family : </td>
+            <td><input type="text" id="family" name="family" value="${student.family}" /></td>
+            <td class="required" id="validateMsgFamily">*This is required !!!</td>
+        </tr>
+        <tr>
+            <td>College : </td>
+            <td><input type="text" id="college" name="college" value="${student.college}" /></td>
+            <td class="required" id="validateMsgCollege">*This is required !!!</td>
+        </tr>
+    </table>
+    <input type="submit" value="save" />
 </form>
 
 </body>

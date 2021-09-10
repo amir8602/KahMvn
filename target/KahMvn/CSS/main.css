@@ -3,3 +3,10 @@
     color: aqua;
     font-family: "Fira Code Medium";
 }
+.required{
+    font-weight: bolder;color: red;font-family: "Fira Code Medium";display: none;
+}
+
+.required2{
+    font-weight: bolder;color: red;font-family: "Fira Code Medium";display: block;
+}
